@@ -123,16 +123,45 @@ public class IntBinaryOperators {
 		System.out.println("Base 26 of " + num + " = " + Integer.toString(num, 26));
 	}
 
-	private static void integerToOctal(int n) {
-		int base = 8;
-		StringBuilder s = new StringBuilder();
-		while (n > 0) {
-			int rem = n % base;
-			int quotient = n / base;
-			s.append(rem);
-			n = quotient;
-		}
-		s.append(n);
-		System.out.println(s.reverse());
+	
+	
+	public static void binaryIntegerOperations() {
+		
+		int n1 = 2;
+		int n2 = 3;
+		
+		// & it operates on the bits of the integer,
+		// When both bits are 1 the output bit is going to be 1
+		// When one of bits are 0 then the output bit will be 0
+		System.out.println(Integer.toBinaryString(2));
+		System.out.println(Integer.toBinaryString(3));
+		
+		int n3 = 0b10;
+		System.out.println(">> " + Integer.toBinaryString(n3));
+		
+		System.out.println(Integer.toBinaryString(2 & 3)); // 10
+		
+
+		// Exclusive OR
+		// ^ it operates on the bits of the integer,
+		// When both bits are 1 the output bit is going to be 0
+		// When both bits are 0 the output bit is going to be 0
+		// When one bit is 0 and the other bit 1 then the output bit will 1
+		System.out.println(n1 + " - " + Integer.toBinaryString(n1));
+		System.out.println(n2 + " - " + Integer.toBinaryString(n2));
+		
+		System.out.println(">> " + (n1 ^ n2));
+		System.out.println("Binary notation of result >> " + Integer.toBinaryString(n1 ^ n2));
+		
+		// ~ operator, A unary operator applied to a single operand
+		n1 = Integer.MAX_VALUE;
+		System.out.println(n1 + 1); // ?? 
+		System.out.println(n1 + 2); // ?? 
+		
+		n2 = Integer.MIN_VALUE;
+		System.out.println(n2 - 1);
+		
+		
+		
 	}
 }
