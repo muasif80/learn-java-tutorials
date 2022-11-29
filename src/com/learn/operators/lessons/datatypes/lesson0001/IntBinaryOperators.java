@@ -1,4 +1,4 @@
-package com.learn.operators.lessons.lesson0001;
+package com.learn.operators.lessons.datatypes.lesson0001;
 
 import java.io.PrintStream;
 
