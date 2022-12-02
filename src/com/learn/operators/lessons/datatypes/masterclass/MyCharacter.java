@@ -1,8 +1,12 @@
 package com.learn.operators.lessons.datatypes.masterclass;
 
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
+
 public class MyCharacter {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws UnsupportedEncodingException {
 
 		char c1 = 'a';
 		char c2 = 97;
@@ -38,5 +42,63 @@ public class MyCharacter {
 		}
 		
 		
+		//charToNumericTypes(c1);
+		
+		charOperations();
+		
+		//charToUnicode();
+	}
+	
+	private static void charOperations() {
+		System.out.println("charOperations");
+		char r1 =  'a' + 'b';
+		System.out.println((int)r1 + " = " + r1);
+		
+		char r2 = 'b' - 'a';
+		System.out.println((int)r2 + " = " + r2);
+		
+		char r3 = '0' * 2 + 1;
+		System.out.println("'0' * 2 + 1=" + (int)'0' + "*" + 2 + "+" + 1);
+		System.out.println((int)r3 + "=" + r3);
+		
+		char r4 = (int)('4') ^ (int)('2'); // 100 ^ 010 = 110 = 6
+		System.out.println("'4' ^ '2'=" + (int)'4' + "^" + (int)'2');
+		
+		System.out.println(Integer.toBinaryString(52));
+		System.out.println(Integer.toBinaryString(50));
+		
+		System.out.println((int)r4 + " = " + r4);
+		
+		
+		char r5 = '4' & '2'; // 100 & 010 = 000 = 0
+		System.out.println((int)r5 + " = " + r5);
+	}
+
+	private static void charToNumericTypes(char c1) {
+		int n = c1;
+		byte b = (byte)c1;
+		short s = (byte)c1;
+		long l = (byte)c1;
+		
+		System.out.println("n = " + n);
+		System.out.println("b = " + b);
+		System.out.println("s = " + s);
+		System.out.println("l = " + l);
+	}
+
+	private static void charToUnicode() throws UnsupportedEncodingException {
+		//
+		Charset utf8 = Charset.forName("UTF-8");
+        Charset def = Charset.defaultCharset();
+
+        //String charToPrint = "u0000";
+        char cc = '\u0061'; // Character constant
+        String charToPrint = Character.toString(cc);
+
+        byte[] bytes = charToPrint.getBytes("UTF-8");
+        String message = new String(bytes , def.name());
+
+        PrintStream printStream = new PrintStream(System.out, true, utf8.name());
+        printStream.println(message); // should print your character
 	}
 }
