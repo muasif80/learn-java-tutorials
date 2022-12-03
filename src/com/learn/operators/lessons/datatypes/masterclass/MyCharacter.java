@@ -61,11 +61,11 @@ public class MyCharacter {
 		System.out.println("'0' * 2 + 1=" + (int)'0' + "*" + 2 + "+" + 1);
 		System.out.println((int)r3 + "=" + r3);
 		
-		char r4 = (int)('4') ^ (int)('2'); // 100 ^ 010 = 110 = 6
-		System.out.println("'4' ^ '2'=" + (int)'4' + "^" + (int)'2');
+		char r4 = (int)('4') ^ (int)('2'); // 52 ^ 50 = 52(110100) ^ 50(110010) = 000110 = 6
+		System.out.println("'4' ^ '2' = " + (int)'4' + "(" + Integer.toBinaryString((int)'4') + ")" + " ^ "
+				+ "" +  (int)'2' + "("  + Integer.toBinaryString((int)'2') + ")");
 		
-		System.out.println(Integer.toBinaryString(52));
-		System.out.println(Integer.toBinaryString(50));
+		
 		
 		System.out.println((int)r4 + " = " + r4);
 		
